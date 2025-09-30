@@ -9,6 +9,7 @@ const resources = [
     type: "Guide",
     icon: BookOpen,
     color: "text-blue-500",
+    url: "https://agrisnetodisha.ori.nic.in/"
   },
   {
     title: "Video Tutorials",
@@ -16,6 +17,7 @@ const resources = [
     type: "Video",
     icon: Video,
     color: "text-red-500",
+    url: "https://www.youtube.com/results?search_query=odisha+agriculture+crop+practices"
   },
   {
     title: "Government Schemes",
@@ -23,6 +25,7 @@ const resources = [
     type: "Document",
     icon: FileText,
     color: "text-green-500",
+    url: "https://odisha.gov.in/department/agriculture-farmers-empowerment"
   },
   {
     title: "Pest Management",
@@ -30,6 +33,7 @@ const resources = [
     type: "Guide",
     icon: BookOpen,
     color: "text-orange-500",
+    url: "https://www.ncipm.org.in/"
   },
   {
     title: "Organic Farming",
@@ -37,6 +41,7 @@ const resources = [
     type: "Guide",
     icon: BookOpen,
     color: "text-green-600",
+    url: "https://ncof.dacnet.nic.in/"
   },
   {
     title: "Market Linkage",
@@ -44,6 +49,23 @@ const resources = [
     type: "Resource",
     icon: ExternalLink,
     color: "text-purple-500",
+    url: "https://enam.gov.in/"
+  },
+  {
+    title: "OUAT Agronomy Resources",
+    description: "Crop-specific advisories from OUAT (Odisha)",
+    type: "Guide",
+    icon: BookOpen,
+    color: "text-teal-600",
+    url: "https://ouat.nic.in/"
+  },
+  {
+    title: "KRUSHAK Odisha Portal",
+    description: "Farmer registration and welfare schemes in Odisha",
+    type: "Resource",
+    icon: ExternalLink,
+    color: "text-indigo-600",
+    url: "https://krushak.odisha.gov.in/"
   },
 ];
 
@@ -77,10 +99,19 @@ const Resources = () => {
               <CardDescription>{resource.description}</CardDescription>
             </CardHeader>
             <CardContent>
-              <Button className="w-full bg-primary hover:bg-primary/90" size="sm">
-                Access Resource
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </Button>
+              <a
+                href={(resource as any).url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Button className="w-full bg-primary hover:bg-primary/90" size="sm" asChild={false}>
+                  <span className="inline-flex items-center">
+                    Access Resource
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </span>
+                </Button>
+              </a>
             </CardContent>
           </Card>
         ))}
