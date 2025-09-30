@@ -1,0 +1,7 @@
+project_id = "tqmwzrujzlhgmuilknwm"
+
+[functions.chat-gemini]
+verify_jwt = false
+
+[functions.get-weather]
+verify_jwt = false
